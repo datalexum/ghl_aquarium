@@ -1,0 +1,8 @@
+{
+  "name": "GHL Aquarium Integration",
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "homeassistant": "2025.4.1",
+  "country": "DE",
+  "render_readme": true
+}
