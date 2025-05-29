@@ -1,0 +1,10 @@
+{
+  "domain": "ghl_aquarium",
+  "name": "GHL Aquarium Computer",
+  "version": "0.1.0",
+  "documentation": "https://github.com/datalexum/ghl_aquarium",
+  "requirements": ["websockets"],
+  "codeowners": ["@datalexum"],
+  "dependencies": [],
+  "iot_class": "local_polling"
+}
