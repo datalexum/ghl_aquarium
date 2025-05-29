@@ -21,8 +21,15 @@ class GHLSensor(SensorEntity):
         self._sensor_type = sensor_type
         self._attr_name = f"GHL {sensor_type} Sensor {sensor_id}"
         self._attr_unique_id = f"ghl_{sensor_type}_{sensor_id}"
-        self._attr_native_unit_of_measurement = "°C" if sensor_type == "temperature" else None
+        self._attr_native_unit_of_measurement = {
+            "temperature": "°C",
+            "ph": "pH",
+#            "redox": "mV",
+#            "salinity": "ppt"
+        }.get(sensor_type)
         self._attr_native_value = None
 
     async def async_update(self):
-        self._attr_native_value = await get_sensor_value(self._ip, self._sensor_id)
+        self._attr_native_value = await get_sensor_value(
+            self._ip, self._sensor_id
+        )
